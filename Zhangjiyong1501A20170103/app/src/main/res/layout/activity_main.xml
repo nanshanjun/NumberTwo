@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bwei.zhangjiyong1501a20170103.MainActivity">
+
+    <com.bwei.zhangjiyong1501a20170103.Circle
+        android:id="@+id/circle_one"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:textColor="#f2f2"
+        app:textSize="20sp"/>
+
+    <com.bwei.zhangjiyong1501a20170103.Circle_t
+        android:id="@+id/circle_two"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.bwei.zhangjiyong1501a20170103.Circle_th
+        android:id="@+id/circle_three"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+</LinearLayout>

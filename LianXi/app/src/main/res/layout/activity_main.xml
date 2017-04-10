@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/activity_title"></include>
+
+    <FrameLayout
+        android:id="@+id/fl_main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D8D8D8"/>
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"/>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/bt_main_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="首页"
+                    android:textSize="12sp"
+                    android:drawableTop="@drawable/bt_home_selector"
+                    android:textColor="@drawable/bt_text_selector"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/bt_main_adver"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="广告"
+                    android:textSize="12sp"
+                    android:drawableTop="@drawable/bt_adver_selector"
+                    android:textColor="@drawable/bt_text_selector"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/bt_main_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="应用"
+                    android:textSize="12sp"
+                    android:drawableTop="@drawable/bt_apply_selector"
+                    android:textColor="@drawable/bt_text_selector"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/bt_main_goods"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="商店"
+                    android:textSize="12sp"
+                    android:drawableTop="@drawable/bt_goods_selector"
+                    android:textColor="@drawable/bt_text_selector"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/bt_main_mine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="我的"
+                    android:textSize="12sp"
+                    android:drawableTop="@drawable/bt_mine_selector"
+                    android:textColor="@drawable/bt_text_selector"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

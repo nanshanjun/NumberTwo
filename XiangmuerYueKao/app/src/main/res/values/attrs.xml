@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyCircle">
+
+        <attr name="paintClor" format="color"></attr>
+
+        <attr name="circleRadius" format="float"></attr>
+
+    </declare-styleable>
+
+</resources>

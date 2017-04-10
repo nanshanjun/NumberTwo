@@ -1,0 +1,122 @@
+package comz.bwei.recycleviewdemo;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    RecyclerView rel_main;
+
+    List<String> list = new ArrayList<String>();
+
+    MyAdapter adapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        rel_main = (RecyclerView)findViewById(R.id.rel_main);
+        //添加分割线
+//        rel_main.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
+
+        //添加默认动画
+        rel_main.setItemAnimator(new DefaultItemAnimator());
+
+        //添加布局管理器
+        //listview 效果
+        rel_main.setLayoutManager(new LinearLayoutManager(this));
+        // gridview 效果
+//        rel_main.setLayoutManager(new GridLayoutManager(this,4));
+
+        //瀑布流效果
+//        rel_main.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
+
+
+        adapter = new MyAdapter();
+        rel_main.setAdapter(adapter);
+
+
+
+        for (int i=0;i<100;i++){
+
+            list.add("面朝大海,春暖花开"+i);
+        }
+
+        adapter.addrest(list);
+    }
+
+
+
+    class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
+
+        List<String> list = new ArrayList<String>();
+
+        public void addrest(List<String> list){
+            this.list.clear();
+            this.list.addAll(list);
+            this.notifyDataSetChanged();
+        }
+
+
+        @Override
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+            MyViewHolder myViewHolder = new MyViewHolder(LayoutInflater.from(MainActivity.this).inflate(R.layout.item,null));
+            return myViewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(MyViewHolder holder, final int position) {
+
+            holder.tv_item.setText(list.get(position));
+
+            holder.tv_item.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    list.remove(position);
+                    notifyDataSetChanged();
+                    return true;
+                }
+            });
+
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) holder.tv_item.getLayoutParams();
+            params.height = position+100;
+
+            holder.tv_item.setLayoutParams(params);
+        }
+
+
+        @Override
+        public int getItemCount() {
+            return list.size();
+        }
+
+
+        class MyViewHolder extends RecyclerView.ViewHolder{
+
+            TextView tv_item;
+
+            public MyViewHolder(View itemView) {
+                super(itemView);
+
+                tv_item = (TextView)itemView.findViewById(R.id.tv_item);
+
+
+
+            }
+        }
+    }
+}

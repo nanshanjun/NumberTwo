@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bwei.zhangjiyong1501a20170206.MainActivity">
+
+    <com.bwei.zhangjiyong1501a20170206.RingView
+        android:id="@+id/circle_main"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        android_custom:ringColor="#f2f2"
+        android_custom:paintColor="#f2f2"
+        android_custom:ringWidth="5dp"
+        android_custom:innerCircleWidth="83dp"
+        android_custom:ornerCircleWidth="88dp"
+        android_custom:textSize="15sp"
+         />
+</LinearLayout>

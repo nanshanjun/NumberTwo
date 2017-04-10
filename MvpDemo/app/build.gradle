@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'walle'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.bwei.mvpdemo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi', 'x86'
+            universalApk false
+        }
+    }
+
+    signingConfigs {
+        sankuai {
+            storeFile file("keystore/meituan-debug.keystore")
+            storePassword "1234567"
+            keyAlias "meituan"
+            keyPassword "12345678"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sankuai
+        }
+
+debug {
+    minifyEnabled false
+    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    signingConfig signingConfigs.sankuai
+}
+
+}
+
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+}
+
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+    compile 'com.meituan.android.walle:library:1.1.1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    testCompile 'junit:junit:4.12'
+
+    walle {
+        apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+        apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}-${flavorName}.apk'
+        //configFile与channelFile两者必须存在一个，否则无法生成渠道包。两者都存在时优先执行configFile
+        channelFile = new File("${project.getProjectDir()}/channel")
+        //configFile = new File("${project.getProjectDir()}/config.json")
+    }
+
+}

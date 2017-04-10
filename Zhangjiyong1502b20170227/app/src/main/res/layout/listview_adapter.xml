@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_map_dw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="定位" />
+
+    <Button
+        android:id="@+id/bt_picture_hc"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="清楚缓存" />
+
+    <ImageView
+        android:id="@+id/iv_picture"
+        android:layout_width="300dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/iv_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="1111"
+        android:visibility="gone"
+        android:background="#00dddd"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tv_occupation"
+        android:layout_below="@id/iv_picture"
+        android:layout_toRightOf="@id/tv_age"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="1111"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:background="#ffbb00"/>
+
+    <TextView
+        android:id="@+id/tv_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tv_age"/>
+
+</RelativeLayout>

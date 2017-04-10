@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_dialog_cammer"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <Button
+        android:background="#929292"
+        android:id="@+id/btn_dialog_cammer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="拍照"/>
+
+    <Button
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="#929292"
+        android:id="@+id/btn_dialog_photo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="相册"/>
+
+    <Button
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="#929292"
+        android:id="@+id/btn_dialog_cance"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="取消"/>
+
+</LinearLayout>

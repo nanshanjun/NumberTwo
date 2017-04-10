@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bwei.zhangjiyong1502b20170213.MainActivity">
+
+    <com.bwei.zhangjiyong1502b20170213.Circle
+        android:id="@+id/myCircle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:outCircleRadius="50"
+        app:circleColor="#f2f2"
+        app:inCircleRadius="30"
+        app:textSize="20"
+        app:textColor="#f2f"
+        />
+
+    <com.bwei.zhangjiyong1502b20170213.Circle
+        android:id="@+id/myCircle_t"
+        android:layout_below="@id/myCircle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:outCircleRadius="90"
+        app:circleColor="#f2f"
+        app:inCircleRadius="40"
+        app:textSize="20"
+        app:textColor="#f2f2"
+        />
+
+    <com.bwei.zhangjiyong1502b20170213.Circle
+        android:id="@+id/myCircle_f"
+        android:layout_below="@id/myCircle_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:outCircleRadius="50"
+        app:circleColor="#f4ff"
+        app:inCircleRadius="20"
+        app:textSize="20"
+        app:textColor="#f0f000"
+        />
+</RelativeLayout>

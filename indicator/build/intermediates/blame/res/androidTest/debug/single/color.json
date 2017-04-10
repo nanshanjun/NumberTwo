@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/apple/Desktop/android_studio/WeiJiFen/indicator/build/intermediates/res/merged/androidTest/debug/color/vpi__light_theme.xml",
+        "source": "/Users/apple/Desktop/android_studio/WeiJiFen/indicator/build/intermediates/bundles/debug/res/color/vpi__light_theme.xml"
+    },
+    {
+        "merged": "/Users/apple/Desktop/android_studio/WeiJiFen/indicator/build/intermediates/res/merged/androidTest/debug/color/vpi__dark_theme.xml",
+        "source": "/Users/apple/Desktop/android_studio/WeiJiFen/indicator/build/intermediates/bundles/debug/res/color/vpi__dark_theme.xml"
+    }
+]
